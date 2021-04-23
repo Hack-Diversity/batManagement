@@ -6,7 +6,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 ## What the Project Does
 
-Our project aims to alleviate some of the negative impacts of gentrification on gentrified communities by providing small/local businesses in gentrified neighborhoods with tech resources that will help them sustain and broaden their engagement within their community and with their customers. Our project is aimed at none technical persons. Our project provides easy interactivity and is intended to help them leverage existing technology. Our project tackles two root causes of gentrification: 
+Our project aims to alleviate some of the negative impacts of gentrification on gentrified communities. Bat Management provides small local businesses in gentrified neighborhoods with tech resources that will help them sustain and broaden their community engagement and their customer relationship. Our project is aimed at none technical persons. Our project provides easy interactivity and is intended to help them leverage existing technology. Our project tackles two root causes of gentrification: 
   
   **(1) increasing costs;** and
   
@@ -22,7 +22,7 @@ The tech stack for this project is composed of a combination of coding framework
 
 ## Where users can get help with your project
 
-Developers can contact dehack21_bat@hackd.com for additional information nad resources.
+Developers can contact dehack21_bat@hackd.com for additional information and resources.
 
 ## Who maintains and contributes to the project
 
