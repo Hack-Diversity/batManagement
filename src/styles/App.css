@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  color: black;
+  margin:0px; padding:0px;
 }
 
 .App-logo {
@@ -13,21 +15,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +22,112 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.nav-bg-custom{
+  background-color:rgba(228, 228, 238);
+}
+
+.nav-container-style{
+  background-color:inherit;
+  display:flex;
+  height:auto;
+  width:100%;
+  justify-content: space-between;
+  margin:0px; padding:0px;
+}
+
+.nav-item-style{
+  justify-content: space-around;
+  align-items: center;
+  display:flex;
+  font-weight:bold;
+  color:black;
+  width:50%;
+}
+
+.nav-logo-font{
+  font-weight: bold;
+  font-size: 3.5vh;
+  margin-left: 14px;
+}
+
+.nav-logo-purple{
+  color:#685BDF;
+}
+
+.nav-item-font{
+  padding:0px;
+  margin:0px;
+  display:flex;
+  justify-content: space-around;
+}
+
+.nav-login{
+  border:2px solid #685BDF;
+  border-radius:5px;
+  height:40px;
+  width:50px;
+  color:#685BDF;
+  padding:3px 10px;
+  margin:0px;
+}
+
+.nav-link{
+  color:black;
+}
+
+.home-container{
+  background-color: white;
+  min-height: 60vh;
+  width:100%;
+  margin:0px;
+  padding:0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+}
+
+.home-text-container{
+  width:50%;
+  height:120px;
+  float:left;
+  padding:0px;
+  display:flex;
+  color:black;
+}
+
+.home-image-container{
+  width:50%;
+  height:100%;
+  margin:100px 0px 0px 0px;
+  padding:0px;
+  color:black;
+  background-size: contain;
+}
+
+.home-text{
+  color:black;
+  font-weight: bold;
+  font-size: 70px;
+  margin-left: 40px;
+}
+
+.homebtn-getstarted-container{
+  height:100%;
+  justify-content:center;
+  margin:0px 0px 0px 40px;
+}
+
+.homebtn-getstarted{
+  background-color: #685BDF;
+  border-radius: 4px;
+  border:none;
+  font-weight: bold;
+  font-size: 25px;
+  margin:0px 20px 0px 0px;
+  color:white;
+  height:80px;
+  width:200px;
 }
