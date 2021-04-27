@@ -60,6 +60,7 @@ class CreateAccount extends Component{
           <div className="createAccount_btn_back">
             <Button
               variant="secondary"
+              style={{fontWeight:"bold"}}
               >
                 Back
             </Button>
