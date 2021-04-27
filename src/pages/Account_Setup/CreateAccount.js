@@ -18,7 +18,7 @@ class CreateAccount extends Component{
             size="lg"
             className="start-form-label"
             for="company_name">
-              Company Name:
+              Company Name:*
           </Form.Label>
           <input
             type="text"
