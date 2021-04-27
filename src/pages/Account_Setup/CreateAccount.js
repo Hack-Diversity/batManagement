@@ -107,7 +107,8 @@ class CreateAccount extends Component{
           </Form.Group>
           <div className="createAccount_btn_next">
             <Button
-              variant="primary"
+              variant=""
+              className="bat_btn_general"
               >
               Next
             </Button>
