@@ -81,7 +81,6 @@
 
 .nav-link{
   color:black;
-
 }
 
 .login-form{
@@ -164,8 +163,6 @@
 }
 
 .create-account-form-top{
-  height:100px;
-  width:100%;
   display:flex;
   justify-content: center;
 }
@@ -179,9 +176,6 @@
 }
 
 #create-account-form{
-  width:100%;
-  height:auto;
-  border:1px solid red;
   display:flex;
   align-items: center;
   justify-content: space-around;
@@ -189,10 +183,8 @@
 }
 
 .createAccount{
-  width:300px;
+  width:40%;
   height:250px;
-  display:flex;
-  justify-content: space-around;
 }
 
 .createAccount_input{
@@ -207,27 +199,27 @@
 }
 
 .createAccount_textarea{
-  height:125px;
+  height:120px;
 }
 
 .leftSection{
   float:left;
-  margin:3px;
 }
 
 .rightSection{
   float:right;
 }
 
-#createAccount_btn{
-  width:100%;
-  height:auto;
-  border:1px solid red;
-  padding:30px 0px 0px 0px!important;
-  position:relative;
+.createAccount_btn_back{
   display:flex;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: flex-end;
+  width:100%;
+}
+
+.createAccount_btn_next{
+  display:flex;
+  justify-content: flex-start;
+  width:100%;
 }
 
 @media (max-width:) {

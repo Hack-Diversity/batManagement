@@ -27,7 +27,7 @@ class Home extends Component {
               src="https://purepng.com/public/uploads/large/purepng.com-running-womenrunnerjoggingjumpingrunning-women-1421526963993vkpyk.png"
               height="100%"
               width="100%"
-              alt="runner image"
+              alt="female runner"
             />
           </div>
         </div>

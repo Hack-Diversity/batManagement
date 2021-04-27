@@ -51,6 +51,13 @@ class CreateAccount extends Component{
             >
           </input>
           </Form.Group>
+          <div className="createAccount_btn_back">
+            <Button
+              variant="secondary"
+              >
+                Back
+            </Button>
+          </div>
         </Form>
         <Form className="createAccount">
         <Form.Group className="rightSection">
@@ -92,23 +99,14 @@ class CreateAccount extends Component{
             >
           </textarea>
           </Form.Group>
+          <div className="createAccount_btn_next">
+            <Button
+              variant="primary"
+              >
+              Next
+            </Button>
+          </div>
           </Form>
-      </section>
-      <section id="createAccount_btn">
-        <div>
-          <Button
-            variant="secondary"
-            className="createAccount_btn_back">
-              Back
-          </Button>
-        </div>
-        <div>
-          <Button
-            variant="primary"
-            className="createAccount_next">
-            Next
-          </Button>
-        </div>
       </section>
       </Container>
     )
