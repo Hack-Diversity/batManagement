@@ -2,8 +2,16 @@ import React, {Component} from 'react';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import {useHistory} from 'react-router-dom';
 
 class CreateAccount extends Component{
+  handleBackClick = () =>{
+    this.props.history.push('/');
+  };
+
+  handleNextClick = () =>{
+    this.props.history.push('/welcome');
+  };
 
   render(){
     return(
@@ -61,6 +69,7 @@ class CreateAccount extends Component{
             <Button
               variant="secondary"
               style={{fontWeight:"bold"}}
+              onClick={this.handleBackClick}
               >
                 Back
             </Button>
@@ -110,6 +119,8 @@ class CreateAccount extends Component{
             <Button
               variant=""
               className="bat_btn_general"
+              id="change the href target to the correct ones from Mari"
+              onClick={this.handleNextClick}
               >
               Next
             </Button>

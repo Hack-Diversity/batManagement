@@ -16,6 +16,7 @@ import Price from './pages/Price';
 import Mission from './pages/Mission';
 import Login from './pages/Login';
 import CreateAccount from './pages/Account_Setup/CreateAccount';
+import Welcome from './pages/Account_Setup/Welcome';
 
 
 class App extends Component{
@@ -31,6 +32,7 @@ class App extends Component{
           <Route path="/help" component={Mission}> </Route>
           <Route path="/login" component={Login} />
           <Route path="/createAccount" component={CreateAccount} />
+          <Route path="/welcome" component={Welcome} />
 
         </Switch>
       </Router>
