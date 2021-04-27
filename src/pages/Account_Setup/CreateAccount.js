@@ -21,7 +21,9 @@ class CreateAccount extends Component{
               Company Name:*
           </Form.Label>
           <input
+            required
             type="text"
+            name="company_name"
             placeholder="Company Name"
             className="createAccount_input createAccount_companyName"
             >
@@ -33,7 +35,9 @@ class CreateAccount extends Component{
               Company Address:
           </Form.Label>
           <input
+            required
             type="text"
+            name="company_address"
             placeholder="Address"
             className="createAccount_input  createAccount_companyAddress"
             >
@@ -45,7 +49,9 @@ class CreateAccount extends Component{
               E-mail Address:
           </label>
           <input
+            required
             type="text"
+            name="company_email"
             placeholder="E-mail"
             className="createAccount_input  createAccount_companyEmail"
             >
