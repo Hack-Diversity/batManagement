@@ -1,26 +1,23 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import Container from 'react-bootstrap/Container';
+import CreateAccount from './CreateAccount';
 
-class Welcome extends Component{
 
-  componentDidMount(){
-    this.setState({
-      companyName: []
-    });
+
+function Welcome() {
+
+  const name=({company}) => {
+    <CreateAccount company={this.handleNextClick.bind(this.event.target.value)}/>
+    return <div>{this.company}</div>
   }
 
-
-  render(){
-    const {companyName} = this.state || {};
-    const welcomeMessage = `Welcome ${companyName}`
-    return(
-      <Container className="create-account-container">
+  return(
+    <Container className="create-account-container">
       <section className="create-account-form-top">
-        <h3 className="title">{welcomeMessage}</h3>
+        <h3 className="title">Welcome, {name.company}</h3>
       </section>
-      </Container>
-    )
-  }
+    </Container>
+   )
 }
 
 export default Welcome;

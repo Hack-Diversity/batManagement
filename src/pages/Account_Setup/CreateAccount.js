@@ -1,38 +1,60 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {useHistory} from 'react-router-dom';
+import Welcome from './Welcome';
 
-class CreateAccount extends Component{
-  handleBackClick = () =>{
-    this.props.history.push('/');
+function CreateAccount(){
+  const initialValues = {
+    companyName: "Testing",
+    companyEmail: "",
+    companyAddress: "",
+    companyAbout: "",
   };
 
-  handleNextClick = () =>{
-    this.props.history.push('/welcome');
+  const [values, setValues] = useState(initialValues);
+  const history = useHistory();
+
+  const handleOnChange = (event) => {
+      setValues({
+        ...values,
+        [event.target.data]:  event.target.value,
+      });
+      console.log(event.target.value);
+    };
+
+  const handleBackClick = () => {
+    history.push('/');
   };
 
-  render(){
+  const handleNextClick = () =>{
+  history.push('/welcome');
+  };
+
     return(
       <Container className="create-account-container">
       <section className="create-account-form-top">
         <h3 className="title">Let's start by creating your account</h3>
       </section>
       <section id="create-account-form">
-        <Form className="createAccount">
+        <Form
+          className="createAccount"
+          >
         <Form.Group className="leftSection">
           <Form.Label
             size="lg"
             className="start-form-label"
             for="company_name">
-              Company Name:*
+              Company Name:
           </Form.Label>
           <input
             required
             type="text"
-            name="company_name"
+            name="companyName"
             placeholder="Company Name"
+            defaultvalue={values.companyName}
+            onChange={handleOnChange}
             className="createAccount_input createAccount_companyName"
             >
           </input>
@@ -47,6 +69,8 @@ class CreateAccount extends Component{
             type="text"
             name="company_address"
             placeholder="Address"
+            defaultValue={values.companyAddress}
+            onChange={handleOnChange}
             className="createAccount_input  createAccount_companyAddress"
             >
           </input>
@@ -61,6 +85,8 @@ class CreateAccount extends Component{
             type="text"
             name="company_email"
             placeholder="E-mail"
+            defaultValue={values.companyEmail}
+            onChange={handleOnChange}
             className="createAccount_input  createAccount_companyEmail"
             >
           </input>
@@ -69,7 +95,7 @@ class CreateAccount extends Component{
             <Button
               variant="secondary"
               style={{fontWeight:"bold"}}
-              onClick={this.handleBackClick}
+              onClick={handleBackClick}
               >
                 Back
             </Button>
@@ -83,21 +109,22 @@ class CreateAccount extends Component{
             for="account_type">
               Account Type:
           </Form.Label>
-          <select className="createAccount_input createAccount_accountType">
+          <select
+            className="createAccount_input createAccount_accountType">
             <option
               value="retail">Store Owner
             </option>
             <option
-              value="online store">Employee
+              value="online store">Site Administrator
             </option>
             <option
               value="fashion and style">Manager
             </option>
             <option
-              value="health and wellness">Temp
+              value="health and wellness">Employee
             </option>
             <option
-              value="portfolio & CV">Administrator
+              value="portfolio & cv">Temp
             </option>
             <option
               value="Other">Other
@@ -107,10 +134,12 @@ class CreateAccount extends Component{
             size="lg"
             className="start-form-label"
             for="about">
-              About:
+              About the company:
           </Form.Label>
           <textarea
             type="comment"
+            defaultValue={values.companyAbout}
+            onChange={handleOnChange}
             className="createAccount_input  createAccount_textarea"
             >
           </textarea>
@@ -120,7 +149,7 @@ class CreateAccount extends Component{
               variant=""
               className="bat_btn_general"
               id="change the href target to the correct ones from Mari"
-              onClick={this.handleNextClick}
+              onClick={handleNextClick}
               >
               Next
             </Button>
@@ -129,7 +158,7 @@ class CreateAccount extends Component{
       </section>
       </Container>
     )
-  }
+
 }
 
 export default CreateAccount;
