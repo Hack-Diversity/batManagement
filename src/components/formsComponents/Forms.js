@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 const Forms = ({
   name,
@@ -12,7 +12,7 @@ const Forms = ({
   children,
   label,
   ...props
-}) =>{
+}) => {
   return(
     <React.Fragment>
       <label htmlFor={name}>{label}</label>
@@ -30,7 +30,7 @@ const Forms = ({
       {error && <p>{error}</p>}
     </React.Fragment>
   )
-}
+};
 
 Forms.defaultProps={
   type:"text",
@@ -41,8 +41,10 @@ Forms.propTypes = {
   name: PropTypes.string.isRequired,
   type:PropTypes.string,
   placeholder: PropTypes.string.isRequired,
-  type: PropTypes.onOf(["text", "number", "password"]),
+  type: PropTypes.oneOf(["text", "number", "password"]),
   className: PropTypes.string,
-  value:PropTypes.any,
-  onChange:PropTypes.func.isRequired
-}
+  value:PropTypes.string,
+  onChange:PropTypes.func
+};
+
+export default Forms;

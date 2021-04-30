@@ -3,10 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {useHistory} from 'react-router-dom';
+import Input from "/Users/zeejall/Desktop/bat_management/src/components/formsComponents/Input.js";
 
-function CreateAccount(){
+function CreateAccount(props){
   let initialValues = {
     companyName: "",
+    companyName2: "",
     companyEmail: "",
     companyAddress: "",
     companyType:"",
@@ -19,7 +21,7 @@ function CreateAccount(){
   const handleOnChange = (data) =>{
     setValues({
       ...values,
-      [data.target.name]: data.target.value,
+      [data.target.name]: data.target.value
     });
     return values.data;
   }
@@ -31,13 +33,13 @@ function CreateAccount(){
   const handleNextClick = () =>{
   history.push('/welcome');
   console.log(`
+    ${values.companyName2}
     ${values.companyName}
     ${values.companyAddress}
     ${values.companyEmail}
     ${values.companyType}
     ${values.companyAbout}
   `);
-  console.log(values.value);
 };
 
     return(
@@ -60,7 +62,7 @@ function CreateAccount(){
             type="text"
             name="companyName"
             placeholder="Company Name"
-            value={values.companyName.value}
+            value={values.value}
             onChange={handleOnChange}
             className="createAccount_input createAccount_companyName"
             >
