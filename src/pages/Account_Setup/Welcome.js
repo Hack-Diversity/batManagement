@@ -3,18 +3,12 @@ import Container from 'react-bootstrap/Container';
 import CreateAccount from './CreateAccount';
 
 
-
-function Welcome() {
-
-  const name=({company}) => {
-    <CreateAccount company={this.handleNextClick.bind(this.event.target.value)}/>
-    return <div>{this.company}</div>
-  }
+function Welcome(props) {
 
   return(
     <Container className="create-account-container">
       <section className="create-account-form-top">
-        <h3 className="title">Welcome, {name.company}</h3>
+        <h3 className="title m-6">Welcome, {props.company}</h3>
       </section>
     </Container>
    )

@@ -3,26 +3,26 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {useHistory} from 'react-router-dom';
-import Welcome from './Welcome';
 
 function CreateAccount(){
-  const initialValues = {
-    companyName: "Testing",
+  let initialValues = {
+    companyName: "",
     companyEmail: "",
     companyAddress: "",
+    companyType:"",
     companyAbout: "",
   };
 
-  const [values, setValues] = useState(initialValues);
   const history = useHistory();
+  const [values, setValues] = useState(initialValues);
 
-  const handleOnChange = (event) => {
-      setValues({
-        ...values,
-        [event.target.data]:  event.target.value,
-      });
-      console.log(event.target.value);
-    };
+  const handleOnChange = (data) =>{
+    setValues({
+      ...values,
+      [data.target.name]: data.target.value,
+    });
+    return values.data;
+  }
 
   const handleBackClick = () => {
     history.push('/');
@@ -30,7 +30,15 @@ function CreateAccount(){
 
   const handleNextClick = () =>{
   history.push('/welcome');
-  };
+  console.log(`
+    ${values.companyName}
+    ${values.companyAddress}
+    ${values.companyEmail}
+    ${values.companyType}
+    ${values.companyAbout}
+  `);
+  console.log(values.value);
+};
 
     return(
       <Container className="create-account-container">
@@ -45,15 +53,14 @@ function CreateAccount(){
           <Form.Label
             size="lg"
             className="start-form-label"
-            for="company_name">
+            for="companyName">
               Company Name:
           </Form.Label>
           <input
-            required
             type="text"
             name="companyName"
             placeholder="Company Name"
-            defaultvalue={values.companyName}
+            value={values.companyName.value}
             onChange={handleOnChange}
             className="createAccount_input createAccount_companyName"
             >
@@ -61,15 +68,14 @@ function CreateAccount(){
           <Form.Label
             size="lg"
             className="start-form-label"
-            for="company_address">
+            for="companyAddress">
               Company Address:
           </Form.Label>
           <input
-            required
             type="text"
-            name="company_address"
+            name="companyAddress"
             placeholder="Address"
-            defaultValue={values.companyAddress}
+            value={values.value}
             onChange={handleOnChange}
             className="createAccount_input  createAccount_companyAddress"
             >
@@ -77,15 +83,15 @@ function CreateAccount(){
           <label
             size="lg"
             className="start-form-label"
-            for="company_email">
+            for="companyEmail">
               E-mail Address:
           </label>
           <input
             required
             type="text"
-            name="company_email"
+            name="companyEmail"
             placeholder="E-mail"
-            defaultValue={values.companyEmail}
+            value={values.value}
             onChange={handleOnChange}
             className="createAccount_input  createAccount_companyEmail"
             >
@@ -96,6 +102,7 @@ function CreateAccount(){
               variant="secondary"
               style={{fontWeight:"bold"}}
               onClick={handleBackClick}
+              type="submit"
               >
                 Back
             </Button>
@@ -106,25 +113,28 @@ function CreateAccount(){
           <Form.Label
             size="lg"
             className="start-form-label"
-            for="account_type">
+            for="accountType">
               Account Type:
           </Form.Label>
           <select
+            name="companyType"
+            value={values.value}
+            onChange={handleOnChange}
             className="createAccount_input createAccount_accountType">
             <option
-              value="retail">Store Owner
+              value="Store Owner">Store Owner
             </option>
             <option
-              value="online store">Site Administrator
+              value="Site Administrator">Site Administrator
             </option>
             <option
-              value="fashion and style">Manager
+              value="Manager">Manager
             </option>
             <option
-              value="health and wellness">Employee
+              value="Employee">Employee
             </option>
             <option
-              value="portfolio & cv">Temp
+              value="Temp">Temp
             </option>
             <option
               value="Other">Other
@@ -133,12 +143,13 @@ function CreateAccount(){
           <Form.Label
             size="lg"
             className="start-form-label"
-            for="about">
+            for="accountAbout">
               About the company:
           </Form.Label>
           <textarea
             type="comment"
-            defaultValue={values.companyAbout}
+            name="companyAbout"
+            value={values.value}
             onChange={handleOnChange}
             className="createAccount_input  createAccount_textarea"
             >
@@ -150,6 +161,7 @@ function CreateAccount(){
               className="bat_btn_general"
               id="change the href target to the correct ones from Mari"
               onClick={handleNextClick}
+              type="submit"
               >
               Next
             </Button>

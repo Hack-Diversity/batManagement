@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button';
 
 class Home extends Component {
-
   render(){
-
     return(
       <div className="home-container-top">
         <div className="home-container">
