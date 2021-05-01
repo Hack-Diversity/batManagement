@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button';
+import Layout from '../components/layouts/Layout'
 
 class Home extends Component {
   render(){
     return(
+      <React.Fragment>
+      <Layout>
       <div className="home-container-top">
         <div className="home-container">
           <div className="home-text-container">
@@ -30,6 +33,8 @@ class Home extends Component {
           </div>
         </div>
       </div>
+      </Layout>
+      </React.Fragment>
     )};
 };
 

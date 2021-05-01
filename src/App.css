@@ -220,9 +220,99 @@
   display:flex;
   justify-content: flex-start;
   width:100%;
-
 }
 
+.welcome{
+  display:grid;
+  grid-gap:13vh;
+  grid-template-columns:20% 60%;
+  margin:20px 0px; padding:0px;
+  background-color: inherit;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.welcome-container{
+  display:block;
+  position:relative;
+  margin:10px 0px;
+  padding:0px;
+}
+
+.welcome-headerText{
+  display: block;
+  font-size-adjust: auto;
+  padding:0px 0px 20px 0px;
+  margin:0px;
+}
+
+.welcome-dashboard{
+  display:grid;
+  grid-gap:5px;
+  grid-template-columns:repeat(2, 50%);
+  padding:50px; margin:0px;
+  background-color: #DBD8F6;
+  border-radius: 30px;
+}
+
+.bat_btn_options{
+  width:auto;
+  display:flex;
+  margin:5px;
+  background-color:inherit!important;
+  color:black!important;
+  border-radius: 10px!important;
+  border:1px solid black!important;
+}
+
+.mg{
+  margin:40px 0px;
+}
+
+.sidebar_logo{
+  width:20px;
+  height:10px;
+}
+
+.sidebar{
+    background-color: #454345!important;
+    max-width:100%!important; height:100%;
+    display:block;
+    position:relative; margin:0px;
+    padding:0px;
+}
+
+ul{
+  color:lightgray;
+  list-style: none;
+  display:contents!important;
+  position:relative!important;
+}
+
+.sidebar_list{
+  margin:0px 10px 10px 20px;
+  padding:0px;
+  width:auto; height:6vh;
+  position:relative;
+  display:grid;
+}
+
+.sidebar_footer{
+  display:list-item!important;
+  list-style: none;
+  position:relative;
+  justify-content: space-between!important;
+  color:pink;
+  margin:0px; padding:0px;
+  overflow:  scroll;
+}
+
+.footerContainer{
+  background-color: inherit;
+  width:100%; color:#454345;
+  min-height:12vw;
+
+}
 @media (max-width:) {
   .home-image-container {
     animation: App-logo-spin infinite 20s linear;

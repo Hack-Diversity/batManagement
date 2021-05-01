@@ -7,23 +7,23 @@ import {
   Redirect
 } from "react-router-dom";
 
-import './styles/App.css';
+import './App.css';
 
 import Nav from './components/navbar/Navigation';
+import Footer from './components/layouts/Footer';
 import Home from './pages/Home';
 import Templates from './pages/Templates';
 import Price from './pages/Price';
 import Mission from './pages/Mission';
 import Login from './pages/Login';
-import CreateAccount from './pages/Account_Setup/CreateAccount';
-import Welcome from './pages/Account_Setup/Welcome';
-
+import CreateAccount from './pages/CreateAccount';
+import Welcome from './pages/Welcome';
+import Layout from './components/layouts/Layout';
 
 class App extends Component{
   render(){
     return (
       <React.Fragment>
-      <Nav />
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -33,7 +33,6 @@ class App extends Component{
           <Route path="/login" component={Login} />
           <Route path="/createAccount" component={CreateAccount} />
           <Route path="/welcome" component={Welcome} />
-
         </Switch>
       </Router>
       </React.Fragment>

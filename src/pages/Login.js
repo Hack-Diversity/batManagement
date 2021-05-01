@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import Layout from '../components/layouts/Layout'
 
 class Login extends Component{
   render(){
     return(
+      <Layout>
       <form className="login-form">
         <label >Username
           <input type="text" />
@@ -11,6 +13,7 @@ class Login extends Component{
           <input type="text" />
         </label>
       </form>
+      </Layout>
     );
   };
 

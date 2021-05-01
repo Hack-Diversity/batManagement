@@ -1,9 +1,9 @@
-import React, {Component, useState} from 'react';
+import React, {useState} from 'react';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {useHistory} from 'react-router-dom';
-import Input from "/Users/zeejall/Desktop/bat_management/src/components/formsComponents/Input.js";
+import Layout from '../components/layouts/Layout';
 
 function CreateAccount(props){
   let initialValues = {
@@ -33,7 +33,6 @@ function CreateAccount(props){
   const handleNextClick = () =>{
   history.push('/welcome');
   console.log(`
-    ${values.companyName2}
     ${values.companyName}
     ${values.companyAddress}
     ${values.companyEmail}
@@ -43,6 +42,8 @@ function CreateAccount(props){
 };
 
     return(
+
+      <Layout>
       <Container className="create-account-container">
       <section className="create-account-form-top">
         <h3 className="title">Let's start by creating your account</h3>
@@ -171,8 +172,8 @@ function CreateAccount(props){
           </Form>
       </section>
       </Container>
+      </Layout>
     )
-
 }
 
 export default CreateAccount;
