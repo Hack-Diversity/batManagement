@@ -24,7 +24,7 @@ function WelcomeMain() {
     <Sidebar />
     <div className="welcome">
       <section className="welcome-container">
-        <WelcomeCompany className="" name="[Compant Name]" />
+        <WelcomeCompany name="[Compant Name]" />
         <p className="mg">
           This is your administrator page,
           where you can manage your business' website

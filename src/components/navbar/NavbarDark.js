@@ -11,7 +11,7 @@ export default class NavbarDark extends Component {
      <>
      <Container className="nav-container" fluid>
        <Navbar className="w-100">
-         <Nav className="nav flex" style={{width:"100%", display:"grid", gridTemplateColumns:"20% 80%"}}>
+         <Nav className="nav flex" >
          <Navbar.Brand href="/" style={{backgroundColor:"#454345", position:"relative", display:"block", margin:"0px", padding:"0px"}}>
          <div className="nav-logo-dark">
          <div className="App-logo">
