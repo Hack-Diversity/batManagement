@@ -1,17 +1,29 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import NavDark from '../../components/navbar/NavbarDark';
 import Sidebar from '../welcome/Sidebar';
 
 function WelcomeCompany(props){
-  return <h3 className={props.className}><span className="title">Welcome,</span> {props.name}</h3>
-}
+  return (
+    <h3 className={props.className}>
+      <span className="bold">
+        Welcome
+      </span>,
+      {props.name}
+    </h3>
+  )}
 
 function WelcomeMain() {
 
   return(
-    <div className="welcome-container">
-      <section className="welcome-headerText">
+    <>
+    <div className="w-100" fluid expand="lg">
+    <NavDark />
+    <div className="welcome-side-nav">
+    <Sidebar />
+    <div className="welcome">
+      <section className="welcome-container">
         <WelcomeCompany className="" name="[Compant Name]" />
         <p className="mg">
           This is your administrator page,
@@ -60,7 +72,10 @@ function WelcomeMain() {
           >Settings
         </Button>
       </section>
+      </div>
     </div>
+    </div>
+    </>
    )
 }
 

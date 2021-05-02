@@ -23,7 +23,7 @@ class Home extends Component {
               </Button>
             </div>
           </div>
-          <div className="home-image-container">
+          <div className="w-100">
             <img
               src="https://purepng.com/public/uploads/large/purepng.com-running-womenrunnerjoggingjumpingrunning-women-1421526963993vkpyk.png"
               height="100%"
