@@ -18,7 +18,7 @@ function WelcomeMain() {
 
   return(
     <>
-    <div className="w-100" fluid expand="lg">
+    <div className="w-100" fluid expand>
     <NavDark />
     <div className="welcome-side-nav">
     <Sidebar />

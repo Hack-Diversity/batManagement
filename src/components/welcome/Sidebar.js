@@ -17,7 +17,7 @@ function Sidebar(props){
 
   return(
     <>
-    <aside className="sidebar">
+    <aside className="sidebar" style={{display:"grid", justifyContent:"space-around"}}>
       <ul className="sidebar_list_ul">
         <li
           className="sidebar_list">

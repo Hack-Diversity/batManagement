@@ -72,15 +72,21 @@
   font-weight:bold;
 }
 
+/*make this toggle @window width less than 672px*/
 .navLinks-container{
   display:flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .navLinks{
   margin:0px 15px 0px 0px;
   color:black!important;
   padding:0px!important;
+}
+
+.nav-notification{
+  width:20px;
 }
 
 .nl-dark{
@@ -97,7 +103,7 @@
 .nav-logo-font{
   font-weight: bold;
   font-size: 3.5vh;
-  margin-left: 14px;
+  margin:14px;
 }
 
 .nav-logo-purple{
@@ -112,7 +118,7 @@
   display:flex;
   justify-content:space-around;
   align-items: center;
-  margin:0px 0px 0px 10px;
+  margin:30px 0px 0px 20%;
 }
 
 .flex-around{
@@ -343,8 +349,9 @@ ul{
   display:grid;
   grid-template-columns:20% 80%;
   position:relative;
-  justify-contents:space-around;
+  justify-content:space-around;
 }
+
 .sidebar_footer{
   display:list-item!important;
   list-style: none;
