@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from 'react-bootstrap/Container';
 import bell from "../../assets/notificationIcon.svg";
+import robot from "../../assets/robot.svg";
 
 export default class NavbarDark extends Component {
  render(){
@@ -31,10 +32,13 @@ export default class NavbarDark extends Component {
              <Nav.Link className="navLinks bold" href="/price">Price</Nav.Link>
              <Nav.Link className="navLinks bold" href="/mission">Our Mission </Nav.Link>
              <Nav.Link className="navLinks bold" href="/about">
-              <img className="nav-notification" src={bell}></img>
+              <img className="nav-icons" src={bell}></img>
             </Nav.Link>
             <Nav.Link className="navLinks bold" href="/welcome">
-             <span className="nav-login">Company Name</span>
+             <span className="navLinks bold">
+              Company Name
+              <span><img className="nav-icons" src={robot}></img></span>
+            </span>
            </Nav.Link>
           </span>
          </Nav>
