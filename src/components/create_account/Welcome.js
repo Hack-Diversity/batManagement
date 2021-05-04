@@ -1,8 +1,14 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import NavDark from '../../components/navbar/NavbarDark';
-import Sidebar from '../welcome/Sidebar';
+import {NavbarDark, Sidebar} from '../../components/navbar';
+
+const DASHBOARD_OPTIONS = [
+  "Overview", "Templates", "Manage Social Media",
+  "Translation Settings", "Manage Subscription", "Settings"
+];
+
+
 
 function WelcomeCompany(props){
   return (
@@ -19,7 +25,7 @@ function Welcome() {
   return(
     <>
     <div className="w-100" fluid expand>
-    <NavDark />
+    <NavbarDark />
     <div className="welcome-side-nav">
     <Sidebar />
     <div className="welcome">
@@ -32,45 +38,11 @@ function Welcome() {
         <p className="small">(Select from the options below or on the left)</p>
       </section>
       <section className="welcome-dashboard">
-        <Button
+        {DASHBOARD_OPTIONS.map((dashOptions, i) => <Button
           type="button"
           className="bat_btn_general bat_btn_options"
           variant=""
-          >
-          Overview
-        </Button>
-        <Button
-          type="button"
-          className="bat_btn_general bat_btn_options"
-          variant=""
-          >
-          Manage Social Media
-        </Button>
-        <Button
-          type="button"
-          className="bat_btn_general bat_btn_options"
-          variant=""
-          >Manage Subscription
-        </Button>
-        <Button
-          type="button"
-          className="bat_btn_general bat_btn_options"
-          variant=""
-          >
-          Template
-        </Button>
-        <Button
-          type="button"
-          className="bat_btn_general bat_btn_options"
-          variant=""
-          >Translation Settings
-        </Button>
-        <Button
-          type="button"
-          className="bat_btn_general bat_btn_options"
-          variant=""
-          >Settings
-        </Button>
+          key={i}>{dashOptions}</Button>)}
       </section>
       </div>
     </div>

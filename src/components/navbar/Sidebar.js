@@ -31,7 +31,7 @@ const OPTIONS = [
     <aside className="sidebar" style={{display:"grid", justifyContent:"space-around"}}>
       <ListGroup className="sidebar_list_ul">
         {OPTIONS.map((listItem, i) =>
-          <a href={`/${listItem.option}`}>
+          <a href={`/${listItem.option.replace(" ", "")}`}>
           <ListGroup.Item
             className="sidebar_list"
             key={i}>

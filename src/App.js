@@ -9,16 +9,15 @@ import {
 
 import './App.css';
 
-import Nav from './components/navbar/Navigation';
-import Footer from './components/layouts/Footer';
+import Nav from './components/navbar';
 import Home from './pages/Home';
 import Templates from './pages/Templates';
 import Price from './pages/Price';
 import Mission from './pages/Mission';
 import Login from './pages/Login';
-import CreateAccount from './components/create_account/CreateAccount';
-import Welcome from './components/welcome/Welcome';
+import {CreateAccount, SocialMedia, Welcome} from './components//create_account';
 import Layout from './components/layouts/Layout';
+
 import Settings from './pages/Mission';
 
 class App extends Component{
@@ -35,6 +34,8 @@ class App extends Component{
           <Route path="/createAccount" component={CreateAccount} />
           <Route path="/welcome" component={Welcome} />
           <Route path="/Settings" component={Settings} />
+          <Route path="/mission" component={Mission} />
+          <Route path="/SocialMedia" component={SocialMedia} />
 
         </Switch>
       </Router>

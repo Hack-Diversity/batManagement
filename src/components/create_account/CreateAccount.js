@@ -24,7 +24,7 @@ function CreateAccount(props){
       [data.target.name]: data.target.value
     });
     return values.data;
-  }
+  };
 
   const handleBackClick = () => {
     history.push('/');
@@ -41,10 +41,12 @@ function CreateAccount(props){
   `);
 };
 
+const OPTIONS = [ "Store Owner", "Site Administrator", "Manager", "Employee", "Temp", "Other"];
+
     return(
 
       <Layout>
-      
+
       <Container className="create-account-container">
       <section className="create-account-form-top">
         <h3 className="title">Let's start by creating your account</h3>
@@ -125,24 +127,8 @@ function CreateAccount(props){
             value={values.value}
             onChange={handleOnChange}
             className="createAccount_input createAccount_accountType">
-            <option
-              value="Store Owner">Store Owner
-            </option>
-            <option
-              value="Site Administrator">Site Administrator
-            </option>
-            <option
-              value="Manager">Manager
-            </option>
-            <option
-              value="Employee">Employee
-            </option>
-            <option
-              value="Temp">Temp
-            </option>
-            <option
-              value="Other">Other
-            </option>
+            <option value=" ">Select... </option>
+              {OPTIONS.map((option, i) => <option key ={i}>{option}</option>)}
           </select>
           <Form.Label
             size="lg"

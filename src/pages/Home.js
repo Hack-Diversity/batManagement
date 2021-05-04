@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button';
 import Layout from '../components/layouts/Layout'
+import runner from "../assets/runner.jpg";
 
 class Home extends Component {
   render(){
@@ -25,7 +26,7 @@ class Home extends Component {
           </div>
           <div className="w-100">
             <img
-              src="https://purepng.com/public/uploads/large/purepng.com-running-womenrunnerjoggingjumpingrunning-women-1421526963993vkpyk.png"
+              src={runner}
               height="100%"
               width="100%"
               alt="female runner"

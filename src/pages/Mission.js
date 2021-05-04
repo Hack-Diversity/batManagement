@@ -5,15 +5,15 @@ import shopLocal from '../assets/mps0.jpg';
 
 
 const missionContainer={
-  justifyContent:'flex-start',
   width:'100%',
   height:'auto',
   margin:'20px',
 }
 
 const imageMission = {
-  width:'100%',
+  width:'35rem',
   height:'auto',
+  display:"flex",
 }
 
 const missionStyle = {
@@ -36,9 +36,21 @@ function Mission(){
     <div>
       <div style={missionContainer}>
         <h1 className="title">ABOUT US</h1>
-          <h2 style={missionStyle}>What is it about coffee and books that makes life wonderful?</h2>
-          <img src={shopLocal} style={imageMission}></img>
-          <p style={missionBody}>Bat Team's Coffee Shop, is a local book store focused on community building through books, fair trade coffee, and local restaurers. It is targeted at booklovers, coffee drinkers, adventurers, curious cats, authors and you. It offers feature releases and a host of events including live readings and writing workshops. But our best known service is our artisinal brews and mouth watering pasteries.</p>
+          <h2 style={missionStyle}>Think globally, act & buy locally</h2>
+          <div style={{display:"contents", justifyContents:"center!important"}}>
+            <img src={shopLocal} style={imageMission}></img>
+          </div>
+          <h3 style={{margin:'1.78rem'}}>
+            <bold>Definition of <i>gentrification</i></bold>
+          </h3>
+          <p style={missionBody}>
+            : a process in which a poor area (as of a city) experiences
+            an influx of middle-class or wealthy people who renovate and
+            rebuild homes and businesses and which often results in an
+            increase in property values and the displacement of earlier,
+            usually poorer residents.
+          </p>
+          <author></author>
         </div>
       </div>
     </Layout>
