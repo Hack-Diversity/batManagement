@@ -15,22 +15,15 @@ import overview from "../../assets/ove.svg";
 
 function Sidebar(props){
 
-//handles all of the above in one go, but needs to be properly defined
-  const [values, setValues] = useState({
-    icon: props.src,
-    text:"",
-    handleClick:""
-  });
-
 const OPTIONS = [
-  { msg:"Overview", photo:`${overview}`},
-  { msg:"Account", photo:`${lock}` },
-  { msg:"Templates", photo:`${bulb}`},
-  { msg:"Social Media", photo:`${social}` },
-  { msg:"Translation", photo:`${globe}` },
-  { msg:"Review", photo:`${bell}` },
-  { msg:"Settings", photo:`${setting}` },
-  { msg:"Subscription", photo:`${sub}` }
+  { option:"Overview", photo:`${overview}`},
+  { option:"Account", photo:`${lock}` },
+  { option:"Templates", photo:`${bulb}`},
+  { option:"Social Media", photo:`${social}` },
+  { option:"Translation", photo:`${globe}` },
+  { option:"Review", photo:`${bell}` },
+  { option:"Settings", photo:`${setting}` },
+  { option:"Subscription", photo:`${sub}` }
 ];
 
   return(
@@ -38,12 +31,14 @@ const OPTIONS = [
     <aside className="sidebar" style={{display:"grid", justifyContent:"space-around"}}>
       <ListGroup className="sidebar_list_ul">
         {OPTIONS.map((listItem, i) =>
+          <a href={`/${listItem.option}`}>
           <ListGroup.Item
             className="sidebar_list"
             key={i}>
-              {listItem.msg}
-            <span>  <img className="nav-icons side-icon" src={listItem.photo} /> </span>
+              <img className="nav-icons side-icon"  src={listItem.photo} />
+            {listItem.option}
           </ListGroup.Item>
+          </a>
         )}
       </ListGroup>
     </aside>

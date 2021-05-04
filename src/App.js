@@ -19,6 +19,7 @@ import Login from './pages/Login';
 import CreateAccount from './components/create_account/CreateAccount';
 import Welcome from './components/welcome/Welcome';
 import Layout from './components/layouts/Layout';
+import Settings from './pages/Mission';
 
 class App extends Component{
   render(){
@@ -33,6 +34,8 @@ class App extends Component{
           <Route path="/login" component={Login} />
           <Route path="/createAccount" component={CreateAccount} />
           <Route path="/welcome" component={Welcome} />
+          <Route path="/Settings" component={Settings} />
+
         </Switch>
       </Router>
       </React.Fragment>
