@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {useHistory} from 'react-router-dom';
-import Layout from '../components/layouts/Layout';
+import Layout from '../layouts/Layout';
 
 function CreateAccount(props){
   let initialValues = {
@@ -44,6 +44,7 @@ function CreateAccount(props){
     return(
 
       <Layout>
+      
       <Container className="create-account-container">
       <section className="create-account-form-top">
         <h3 className="title">Let's start by creating your account</h3>

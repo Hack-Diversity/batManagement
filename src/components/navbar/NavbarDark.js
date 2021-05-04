@@ -12,8 +12,9 @@ export default class NavbarDark extends Component {
      <>
      <Container className="nav-container" fluid>
        <Navbar className="w-100">
-         <Nav className="nav flex">
-         <Navbar.Brand href="/" style={{backgroundColor:"#454345", position:"relative", display:"block", margin:"0px", padding:"0px"}}>
+         <Nav className="nav">
+         <div>
+         <Navbar.Brand className="navbarBrand" href="/" >
          <div className="nav-logo-dark" >
          <div className="App-logo">
            <img
@@ -26,6 +27,7 @@ export default class NavbarDark extends Component {
            </div>
            </div>
          </Navbar.Brand>
+         </div>
            <span className="navLinks-container">
              <Nav.Link className="navLinks bold" href="/">Home</Nav.Link>
              <Nav.Link className="navLinks bold" href="/templates">Templates</Nav.Link>

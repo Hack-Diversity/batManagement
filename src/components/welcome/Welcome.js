@@ -14,7 +14,7 @@ function WelcomeCompany(props){
     </h3>
   )}
 
-function WelcomeMain() {
+function Welcome() {
 
   return(
     <>
@@ -79,4 +79,4 @@ function WelcomeMain() {
    )
 }
 
-export default WelcomeMain;
+export default Welcome;

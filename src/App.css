@@ -8,7 +8,7 @@
 }
 
 .App-logo-dark {
-  height: 9vmin;
+  height: 8vmin;
   pointer-events: none;
 }
 
@@ -90,6 +90,11 @@
   margin:0px 8px 0px 8px;
 }
 
+.side-icon{
+  margin:0px 0px 0px 0px!important;
+  float:left;
+}
+
 .nl-dark{
   margin:0px 0px 0px 0px;
   font-weight: bold;
@@ -111,15 +116,24 @@
   color:#685BDF;
 }
 
+.navbarBrand{
+  width:100%;
+  background-color:#454345;
+  position:relative;
+  display:flex!important;
+  align-self: center;
+  justify-content:center!important;
+}
+
 .nav-logo-dark{
-  width:60px;
-  height:60px;
+  width:80px;
+  height:80px;
   border-radius:50%;
   background-color:#685BDF;
   display:flex;
-  justify-content:space-around;
+  justify-content: center;
   align-items: center;
-  margin:30px 0px 0px 20%;
+  margin:30px 0px 30px 0px;
 }
 
 .flex-around{
@@ -324,25 +338,27 @@
 
 .sidebar{
     background-color: #454345!important;
-    max-width:100%!important; height:100%;
+    max-width:100%!important;
+    height:100%;
     display:block;
-    position:relative; margin:0px;
+    position:relative;
+    margin:0px;
     padding:0px;
 }
 
-ul{
+.sidebar_list{
+  margin:0px;
+  padding:0px;
   color:lightgray;
-  list-style: none;
-  display:contents!important;
-  position:relative!important;
+  background-color: inherit!important;
+  border:none!important;
 }
 
-.sidebar_list{
-  margin:0px 10px 10px 20px;
-  padding:0px;
-  width:auto; height:6vh;
-  position:relative;
-  display:grid;
+.solid{
+   width:100%;
+  border:0.3px solid gray;
+  float:left;
+  padding:0px; margin:0px;
 }
 
 .welcome-side-nav{

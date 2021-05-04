@@ -16,8 +16,8 @@ import Templates from './pages/Templates';
 import Price from './pages/Price';
 import Mission from './pages/Mission';
 import Login from './pages/Login';
-import CreateAccount from './pages/CreateAccount';
-import Welcome from './pages/Welcome';
+import CreateAccount from './components/create_account/CreateAccount';
+import Welcome from './components/welcome/Welcome';
 import Layout from './components/layouts/Layout';
 
 class App extends Component{
