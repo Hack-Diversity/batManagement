@@ -15,7 +15,7 @@ import Templates from './pages/Templates';
 import Price from './pages/Price';
 import Mission from './pages/Mission';
 import Login from './pages/Login';
-import {CreateAccount, SocialMedia, Welcome} from './components//create_account';
+import {CreateAccount, SocialMedia, Welcome} from './components/create_account';
 import Layout from './components/layouts/Layout';
 
 import Settings from './pages/Mission';
