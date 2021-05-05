@@ -39,46 +39,26 @@
   padding:0px;
 }
 
+.bold{
+  font-weight:bold;
+}
+
 .nav-container{
   display:contents;
   position:relative;
   color:black;
   align-items: center;
-  margin:0px; padding:0px;
+  margin:0px; padding:1.5rem;
 }
 
-.nav{
+.navbarDark_nav{
   width:100%;
   display:grid!important;
   grid-template-columns:20% 80%;
   position:relative;
 }
 
-.nav-container-dark{
-  width:auto;
-  display:contents;
-  position:relative;
-}
-
-.navbar-container-dark{
-  color:white;
-  width:100%;
-  margin:0px;
-  position:absolute;
-  background-color:#454345!important;
-}
-
-.bold{
-  font-weight:bold;
-}
-
 /*make this toggle @window width less than 672px*/
-.navLinks-container{
-  display:flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
 .navLinks{
   margin:0px 15px 0px 0px;
   color:black!important;
@@ -111,8 +91,12 @@
   margin:14px;
 }
 
-.nav-logo-purple{
-  color:#685BDF;
+.purple_txt{
+  color:#685BDF!important;
+}
+
+.purple_background{
+  background-color:#685BDF;
 }
 
 .navbarBrand{
@@ -128,7 +112,6 @@
   width:80px;
   height:80px;
   border-radius:50%;
-  background-color:#685BDF;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -151,12 +134,15 @@
   justify-content: flex-end;
 }
 
+.left{
+  float:left;
+}
+
 .nav-login{
   border:2px solid #685BDF;
   border-radius:5px;
   height:40px;
   width:50px;
-  color:#685BDF;
   padding:3px 10px;
   margin:0px;
 }
@@ -199,37 +185,24 @@
   margin:3vh 0px 20px 50px;
 }
 
+.bat_btn_general{
+  background-color:#685BDF!important;
+  border-radius:10px!important;
+  color:white!important;
+  font-weight: bold;
+  margin:10px 0px -10px 0px;
+}
+
 .homebtn-getstarted-container{
   display:flex; position: relative;
   margin:0px 0px 0px 40px;
   text-align: center;
 }
 
-.bat_btn_general{
-  background-color:#685BDF!important;
-  border-radius:5px;
-  color:white!important;
-  border:none;
-  font-weight: bold!important;
-}
-
 .homebtn-getstarted{
   box-shadow:;
   font-size:20px!important;
   width:200px;
-}
-
-.create-account-container{
-  width:100%;
-  height:100%;
-  align-items: center;
-  display:block;
-  margin:20px;
-}
-
-.create-account-form-top{
-  display:flex;
-  justify-content: center;
 }
 
 .title{
@@ -240,26 +213,37 @@
   align-items: center;
 }
 
+.centered{
+  display:contents;
+  justify-content: center!important;
+  align-items:center;
+  align-self: center;
+  align-content: center;
+}
+
 #create-account-form{
   display:flex;
-  align-items: center;
-  justify-content: space-around;
+  grid-template-columns: 100%;
+  justify-content:center!important;
 }
 
 .createAccount{
-  width:40%;
-  height:250px;
+  width:70%!important;
+  display:grid;
+  grid-template-columns:40% 40%;
+  grid-gap:40px;
 }
 
 .createAccount_input{
-    height:40px; width:100%;
-    border:1px solid #685BDF;
-    border-radius:5px;
+  height:40px; width:100%;
+  border:1px solid #685BDF;
+  border-radius:5px;
+  display:flex;
 }
 
 .start-form-label{
   width:100%;
-  margin:10px 0px;
+  margin:13px 0px 3px 0px;
 }
 
 .createAccount_textarea{
@@ -274,29 +258,43 @@
   float:right;
 }
 
-.createAccount_btn_back{
-  display:flex;
-  justify-content: flex-end;
-  width:100%;
-}
-
-.createAccount_btn_next{
+.btn_back{
   display:flex;
   justify-content: flex-start;
-  width:100%;
+  width:75px;
+}
+
+.gray{
+  background-color: #6E757C!important;
+}
+
+.btn_next{
+  display:flex;
+  justify-content:flex-end;
+  width:75px;
+  float:right;
+}
+
+.listGroupItem_span{
+  display:grid;
+  grid-template-columns:20% 76%;
+  grid-gap: 7px;
+  padding:auto;
+  margin:auto;
+  justify-content: space-around;
 }
 
 .welcome{
   display:block;
   position:relative;
-  background-color: inherit;
+  background-color:inherit;
 }
 
 .welcome-container{
   display:block;
-  width:100%;
+  width:80%;
   position:relative;
-  margin:6vh 10% 20px 10%;
+  margin:0px 10% 20px 10%;
   padding:0px;
   align-items: center;
 }
@@ -312,13 +310,19 @@
   margin:20px 0px 30px 0px!important;
 }
 
+.span_links{
+  height:50%;
+  align-items:center;
+}
+
 .welcome-dashboard{
   display:grid;
   grid-gap:5px;
-  grid-template-columns:repeat(2, 50%);
+  grid-template-columns:repeat(2, 30%);
   padding:50px; margin:0px 10% 0px 10%;
   background-color: #DBD8F6;
   border-radius: 30px;
+  justify-content: center;
 }
 
 .bat_btn_options{

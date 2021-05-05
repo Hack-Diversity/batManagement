@@ -18,27 +18,27 @@ function SocialMedia() {
 
   return(
     <>
-    <div className="w-100" fluid expand>
+    <div className="w-100" fluid expand="lg">
     <Navigation />
     <div className="welcome">
-      <section style={{marginTop:"150px"}}>
+      <section style={{marginTop:"50px"}}>
         <h2 className="title mg">
           Select Social Media Platforms You Would like to Manage
         </h2>
       </section>
-      <section className="welcome-dashboard">
+      <section className="welcome-dashboard" style={{backgroundColor:"transparent"}}>
         {SOCIAL_OPTIONS.map((social, i) => <Button
           type="button"
           className="bat_btn_general bat_btn_options"
           variant=""
           key={i}>{social}</Button>)}
+          <div>
+            <ReturnBtn />
+          </div>
+          <div className="left">
+            <NextBtn/>
+          </div>
       </section>
-      <div className="createAccount_btn_back">
-      <NextBtn />
-      </div>
-      <div className="createAccount_btn_next">
-        <ReturnBtn />
-      </div>
     </div>
     </div>
     </>

@@ -14,11 +14,15 @@ function ReturnBtn(){
     <div>
       <Button
       variant=""
-      className="bat_btn_general"
+      className="bat_btn_general btn_back gray"
       id="change the href target to the correct ones from Mari"
       onClick={handleNextClick}
       type="submit"
-      >Back</Button>
+      >
+        <span className="bold">
+          Back
+        </span>
+      </Button>
     </div>
   )
 

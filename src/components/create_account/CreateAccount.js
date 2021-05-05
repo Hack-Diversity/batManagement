@@ -8,7 +8,6 @@ import Layout from '../layouts/Layout';
 function CreateAccount(props){
   let initialValues = {
     companyName: "",
-    companyName2: "",
     companyEmail: "",
     companyAddress: "",
     companyType:"",
@@ -33,134 +32,107 @@ function CreateAccount(props){
   const handleNextClick = () =>{
   history.push('/welcome');
   console.log(`
-    ${values.companyName}
-    ${values.companyAddress}
-    ${values.companyEmail}
-    ${values.companyType}
-    ${values.companyAbout}
+    ${values.CompanyName}
+    ${values.CompanyAddress}
+    ${values.CompanyEmail}
+    ${values.CompanyType}
+    ${values.CompanyAbout}
   `);
 };
 
-const OPTIONS = [ "Store Owner", "Site Administrator", "Manager", "Employee", "Temp", "Other"];
+const SELECT_OPTIONS = [ "Store Owner", "Site Administrator", "Manager", "Employee", "Temp", "Other"];
+const INPUT_OPTIONS = [ "Company Name", "Company Address", "E-mail Address"];
 
-    return(
-
-      <Layout>
-
-      <Container className="create-account-container">
-      <section className="create-account-form-top">
+  return(
+    <Layout>
+      <Container className="w-100 centered">
+      <section>
         <h3 className="title">Let's start by creating your account</h3>
       </section>
       <section id="create-account-form">
-        <Form
-          className="createAccount"
-          >
-        <Form.Group className="leftSection">
-          <Form.Label
-            size="lg"
-            className="start-form-label"
-            for="companyName">
-              Company Name:
-          </Form.Label>
-          <input
-            type="text"
-            name="companyName"
-            placeholder="Company Name"
-            value={values.value}
-            onChange={handleOnChange}
-            className="createAccount_input createAccount_companyName"
-            >
-          </input>
-          <Form.Label
-            size="lg"
-            className="start-form-label"
-            for="companyAddress">
-              Company Address:
-          </Form.Label>
-          <input
-            type="text"
-            name="companyAddress"
-            placeholder="Address"
-            value={values.value}
-            onChange={handleOnChange}
-            className="createAccount_input  createAccount_companyAddress"
-            >
-          </input>
-          <label
-            size="lg"
-            className="start-form-label"
-            for="companyEmail">
-              E-mail Address:
-          </label>
-          <input
-            required
-            type="text"
-            name="companyEmail"
-            placeholder="E-mail"
-            value={values.value}
-            onChange={handleOnChange}
-            className="createAccount_input  createAccount_companyEmail"
-            >
-          </input>
-          </Form.Group>
-          <div className="createAccount_btn_back">
+        <Form className="createAccount centered">
+          <Form.Group className="leftSection">
+            {INPUT_OPTIONS.map((inputs, m) =>
+              <>
+                <Form.Label
+                  size="lg"
+                  key={m}
+                  className="start-form-label"
+                  for={inputs.replace(" ", "")}>{inputs}
+                </Form.Label>
+                <input
+                  type="text"
+                  key={m+0}
+                  name={inputs.replace(" ", "")}
+                  placeholder={inputs}
+                  value={values.value}
+                  onChange={handleOnChange}
+                  className={`createAccount_input createAccount_${inputs.replace(" ", "")}`}
+                  >
+                </input>
+              </>
+            )}
+            <div className="btn_back">
             <Button
               variant="secondary"
-              style={{fontWeight:"bold"}}
+              className="bat_btn_general gray"
+              id="change the href target to the correct ones from Mari"
               onClick={handleBackClick}
               type="submit"
               >
+              <span className="bold">
                 Back
+              </span>
             </Button>
-          </div>
-        </Form>
-        <Form className="createAccount">
-        <Form.Group className="rightSection">
-          <Form.Label
-            size="lg"
-            className="start-form-label"
-            for="accountType">
-              Account Type:
-          </Form.Label>
-          <select
-            name="companyType"
-            value={values.value}
-            onChange={handleOnChange}
-            className="createAccount_input createAccount_accountType">
-            <option value=" ">Select... </option>
-              {OPTIONS.map((option, i) => <option key ={i}>{option}</option>)}
-          </select>
-          <Form.Label
-            size="lg"
-            className="start-form-label"
-            for="accountAbout">
-              About the company:
-          </Form.Label>
-          <textarea
-            type="comment"
-            name="companyAbout"
-            value={values.value}
-            onChange={handleOnChange}
-            className="createAccount_input  createAccount_textarea"
-            >
-          </textarea>
+            </div>
           </Form.Group>
-          <div className="createAccount_btn_next">
-            <Button
-              variant=""
-              className="bat_btn_general"
-              id="change the href target to the correct ones from Mari"
-              onClick={handleNextClick}
-              type="submit"
+          <Form.Group className="rightSection">
+            <Form.Label
+            size="lg"
+            className="start-form-label"
+            for="CompanyType">Company Type
+            </Form.Label>
+            <select
+              name="CompanyType"
+              value={values.value}
+              onChange={handleOnChange}
+              className="createAccount_input createAccount_accountType">
+              <option value=" ">Select... </option>
+                {SELECT_OPTIONS.map((option, i) => <option key ={i} value={option}>{option}</option>)}
+            </select>
+            <Form.Label
+              size="lg"
+              className="start-form-label"
+              for="CompanyAbout">
+                About the company
+            </Form.Label>
+            <textarea
+              type="comment"
+              name="CompanyAbout"
+              value={values.value}
+              onChange={handleOnChange}
+              className="createAccount_input  createAccount_textarea"
               >
-              Next
-            </Button>
-          </div>
-          </Form>
+            </textarea>
+            <div className="btn_next">
+              <Button
+                variant=""
+                className="bat_btn_general"
+                id="change the href target to the correct ones from Mari"
+                onClick={handleNextClick}
+                type="submit"
+                >
+                  <span className="bold">
+                    Next
+                  </span>
+              </Button>
+            </div>
+          </Form.Group>
+        </Form>
       </section>
-      </Container>
-      </Layout>
-    )
+    </Container>
+  </Layout>
+  )
 }
 
 export default CreateAccount;

@@ -12,12 +12,12 @@ export default class NavbarDark extends Component {
  render(){
    return(
      <>
-     <Container className="nav-container" fluid>
-       <Navbar className="w-100">
-         <Nav className="nav">
+     <Container className="nav-container">
+       <Navbar className="w-100" >
+         <Nav className="navbarDark_nav">
          <div>
          <Navbar.Brand className="navbarBrand" href="/" >
-         <div className="nav-logo-dark" >
+         <div className="nav-logo-dark purple_background" >
          <div className="App-logo">
            <img
             src={batLogo}
@@ -30,7 +30,7 @@ export default class NavbarDark extends Component {
            </div>
          </Navbar.Brand>
          </div>
-           <span className="navLinks-container">
+           <span className="flex-end span_links" >
              <Nav.Link className="navLinks bold" href="/">Home</Nav.Link>
              <Nav.Link className="navLinks bold" href="/templates">Templates</Nav.Link>
              <Nav.Link className="navLinks bold" href="/price">Price</Nav.Link>

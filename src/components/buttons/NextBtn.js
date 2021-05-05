@@ -14,11 +14,15 @@ function NextBtn(){
     <div>
       <Button
       variant="secondary"
-      className="createAccount_btn_back"
+      className="bat_btn_general btn_next"
       id="change the href target to the correct ones from Mari"
       onClick={handleNextClick}
       type="submit"
-      >Next</Button>
+      >
+        <span className="bold">
+          Next
+        </span>
+      </Button>
     </div>
   )
 

@@ -35,8 +35,13 @@ const OPTIONS = [
           <ListGroup.Item
             className="sidebar_list"
             key={i}>
-              <img className="nav-icons side-icon"  src={listItem.photo} />
-            {listItem.option}
+            <span className="listGroupItem_span">
+              <img
+                className="nav-icons side-icon"
+                src={listItem.photo}
+                />
+              {listItem.option}
+            </span>
           </ListGroup.Item>
           </a>
         )}

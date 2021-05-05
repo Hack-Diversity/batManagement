@@ -21,7 +21,7 @@ export default class Navigation extends Component {
               alt="Bat Management Logo"
              />
              <span className="nav-logo-font">
-                <span className="nav-logo-purple">
+                <span className="purple_txt">
                   Bat
                 </span>
                 Management
@@ -33,7 +33,7 @@ export default class Navigation extends Component {
              <Nav.Link className="navLinks bold" href="/price">Price</Nav.Link>
              <Nav.Link className="navLinks bold" href="/mission">Our Mission </Nav.Link>
              <Nav.Link className="navLinks bold" href="/login">
-              <span className="nav-login" >
+              <span className="nav-login purple_txt" >
                 Log In
               </span>
             </Nav.Link>
