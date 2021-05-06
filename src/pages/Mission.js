@@ -3,16 +3,6 @@ import Layout from '../components/layouts/Layout'
 
 import shopLocal from '../assets/mps0.jpg';
 
-
-const missionBody = {
-  fontSize:'1.2rem',
-  margin:'1.78rem',
-  display:'block',
-  position:'relative',
-  width:'100%',
-  textAlign:'left'
-};
-
 function Mission(){
   return(
     <>

@@ -12,10 +12,6 @@ function SocialMedia() {
   const [values, setValues] = useState("");
   const history = useHistory();
 
-  const handleBackClick = () => {
-      history.push('/');
-    };
-
   return(
     <>
     <div className="w-100" fluid expand="lg">
@@ -32,11 +28,11 @@ function SocialMedia() {
           className="bat_btn_general bat_btn_options"
           variant=""
           key={i}>{social}</Button>)}
-          <div>
+          <div className="flex-start">
             <ReturnBtn />
           </div>
-          <div className="left">
-            <NextBtn/>
+          <div className="flex-end">
+            <NextBtn />
           </div>
       </section>
     </div>

@@ -15,7 +15,7 @@ import Templates from './pages/Templates';
 import Price from './pages/Price';
 import Mission from './pages/Mission';
 import Login from './pages/Login';
-import {CreateAccount, SocialMedia, Welcome} from './components/create_account';
+import {CreateAccount, SocialMedia, SocialMediaLogin, Welcome} from './components/create_account';
 import Layout from './components/layouts/Layout';
 
 import Settings from './pages/Mission';
@@ -36,6 +36,7 @@ class App extends Component{
           <Route path="/Settings" component={Settings} />
           <Route path="/mission" component={Mission} />
           <Route path="/SocialMedia" component={SocialMedia} />
+          <Route path="/Manage Social Media" component={SocialMediaLogin} />
 
         </Switch>
       </Router>

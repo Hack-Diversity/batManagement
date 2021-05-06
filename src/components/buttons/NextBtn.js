@@ -15,7 +15,7 @@ function NextBtn(){
       <Button
       variant="secondary"
       className="bat_btn_general btn_next"
-      id="change the href target to the correct ones from Mari"
+      id="change the href target to the correct ones"
       onClick={handleNextClick}
       type="submit"
       >

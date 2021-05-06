@@ -42,6 +42,7 @@ function Welcome() {
           type="button"
           className="bat_btn_general bat_btn_options"
           variant=""
+          href={`/${dashOptions}`}
           key={i}>{dashOptions}</Button>)}
       </section>
       </div>

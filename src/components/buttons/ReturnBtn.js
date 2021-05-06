@@ -15,7 +15,7 @@ function ReturnBtn(){
       <Button
       variant=""
       className="bat_btn_general btn_back gray"
-      id="change the href target to the correct ones from Mari"
+      id="change the href target to the correct ones"
       onClick={handleNextClick}
       type="submit"
       >
