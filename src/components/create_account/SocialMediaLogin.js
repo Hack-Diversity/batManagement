@@ -5,28 +5,28 @@ import Button from 'react-bootstrap/Button';
 
 function SocialMediaLogin(){
   return(
-      <Layout>
-      <div style={{width:"100%", display:"content"}}>
+      <Layout className="w-100 flex-around">
         <h2 className="title">Login into Facebook</h2>
-        <div style={{display:"contents", position:"relative", width:"", justifyContent:"space-around"}}>
-        <Form id="create-account-form" style={{display:"grid", gridTemplateColumns:"30% 30%", gridGap:"25px", backgroundColor:"red"}}>
+        <div className="login">
+        <div className="loginContainer">
+        <Form className="loginInput" >
           <Form.Group>
             <Form.Label
             size="lg"
-            className="start-form-label"
+            className="form-label"
             >
               Email or Username:
             </Form.Label>
             <input
             type="email"
-            name="email_or_username"
+            name="email or username"
             value=""
             placeholder="Email or Username"
             className="createAccount_input"
             />
             <Form.Label
             size="lg"
-            className="start-form-label centered"
+            className="start-form-label"
             >
               Password:
             </Form.Label>
@@ -36,27 +36,46 @@ function SocialMediaLogin(){
             placeholder="Password"
             className="createAccount_input"
             />
-            <div style={{margin:"20px 0px", display:"grid", position:"relative", gridTemplateColumns:"5% 95%", justifyContent:"space-between", alignItems:"center", backgroundColor:"orange"}}>
+            <div className="radio">
             <input
             type="radio"
             name="choice"
             value="Remeber Me"
-            className="" style={{display:"inline", margin:"0px 0px"}}
             />
-            <div style={{display:"grid", padding:"0px", margin:"0px", gridTemplateColumns:"50% 50%", position:"relative"}}>
-              <div>Remember Me</div>
-              <div style={{ textAlign:"right"}}>Forgot Password?</div>
+            <div className="remember_me">
+                Remember Me
+                  <span className="forgot">
+                    Forgot Password?
+                    </span>
+              </div>
             </div>
-            </div>
+            <Button
+              variant=""
+              className="bat_btn_large btn_login_large purple bold">
+                Login Now
+              </Button>
+
           </Form.Group>
           <div>
-          <div style={{width:"20px", height:"45%", borderRight:"1px solid black"}}></div>
-          <div style={{width:"40px", height:"10%", border:"none", textAlign:"center"}}><h6 >Or</h6></div>
-          <div style={{width:"20px", height:"45%", borderRight:"1px solid black"}}></div>
+            <div className="divider"></div>
+            <div className="divider_middle"><h6> Or </h6></div>
+            <div className="divider "></div>
           </div>
+          <div style={{ display:"flex", position:"relative", alignItems:"center" }}>
+          <div  style={{width:"100%!important", position:"relative", display:"", color:"green!important"}}>
+            <Button
+              variant=""
+              className="bat_btn_large btn_login_large gray">
+                <small className="bold">Or Sign in with Google</small>
+              </Button>
+              <small>Don't have an account?
+                <span> Join for free</span>
+              </small>
+              </div>
+            </div>
         </Form>
         </div>
-      </div>
+        </div>
       </Layout>
   )
 };

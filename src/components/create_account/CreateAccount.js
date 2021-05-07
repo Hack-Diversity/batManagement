@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {useHistory} from 'react-router-dom';
 import Layout from '../layouts/Layout';
+import {NextBtn, ReturnBtn} from '../../components/buttons';
 
 function CreateAccount(props){
   let initialValues = {
@@ -49,7 +50,7 @@ const INPUT_OPTIONS = [ "Company Name", "Company Address", "E-mail Address"];
       <section>
         <h3 className="title">Let's start by creating your account</h3>
       </section>
-      <section id="create-account-form">
+      <section id="create-form">
         <Form className="createAccount centered">
           <Form.Group className="leftSection">
             {INPUT_OPTIONS.map((inputs, m) =>
@@ -57,7 +58,7 @@ const INPUT_OPTIONS = [ "Company Name", "Company Address", "E-mail Address"];
                 <Form.Label
                   size="lg"
                   key={m}
-                  className="start-form-label"
+                  className="form-label"
                   for={inputs.replace(" ", "")}>{inputs}
                 </Form.Label>
                 <input
@@ -72,24 +73,17 @@ const INPUT_OPTIONS = [ "Company Name", "Company Address", "E-mail Address"];
                 </input>
               </>
             )}
-            <div className="btn_back">
-            <Button
-              variant="secondary"
-              className="bat_btn_general gray"
-              id="change the href target to the correct ones from Mari"
-              onClick={handleBackClick}
-              type="submit"
-              >
-              <span className="bold">
-                Back
-              </span>
-            </Button>
+            <div>
+              <ReturnBtn
+                type="submit"
+                onClick={handleBackClick}
+              />
             </div>
           </Form.Group>
           <Form.Group className="rightSection">
             <Form.Label
             size="lg"
-            className="start-form-label"
+            className="form-label"
             for="CompanyType">Company Type
             </Form.Label>
             <select
@@ -102,7 +96,7 @@ const INPUT_OPTIONS = [ "Company Name", "Company Address", "E-mail Address"];
             </select>
             <Form.Label
               size="lg"
-              className="start-form-label"
+              className="form-label"
               for="CompanyAbout">
                 About the company
             </Form.Label>
@@ -114,18 +108,11 @@ const INPUT_OPTIONS = [ "Company Name", "Company Address", "E-mail Address"];
               className="createAccount_input  createAccount_textarea"
               >
             </textarea>
-            <div className="btn_next">
-              <Button
-                variant=""
-                className="bat_btn_general"
-                id="change the href target to the correct ones from Mari"
-                onClick={handleNextClick}
+            <div className="btn_next rightSection">
+              <NextBtn
                 type="submit"
-                >
-                  <span className="bold">
-                    Next
-                  </span>
-              </Button>
+                onClick={handleNextClick}
+              />
             </div>
           </Form.Group>
         </Form>

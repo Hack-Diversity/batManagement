@@ -2,13 +2,7 @@ import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import {useHistory} from 'react-router-dom';
 
-function ReturnBtn(){
-  const [values, setValues] = useState("");
-  const history = useHistory();
-
-  const handleNextClick = () =>{
-    history.push('/welcome');
-  };
+function ReturnBtn(props){
 
   return(
     <div>
@@ -16,8 +10,8 @@ function ReturnBtn(){
       variant=""
       className="bat_btn_general btn_back gray"
       id="change the href target to the correct ones"
-      onClick={handleNextClick}
-      type="submit"
+      onClick={props.onClick}
+      type={props.type}
       >
         <span className="bold">
           Back

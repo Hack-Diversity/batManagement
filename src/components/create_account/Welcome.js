@@ -37,7 +37,7 @@ function Welcome() {
         </p>
         <p className="small">(Select from the options below or on the left)</p>
       </section>
-      <section className="welcome-dashboard">
+      <section className="dashboard">
         {DASHBOARD_OPTIONS.map((dashOptions, i) => <Button
           type="button"
           className="bat_btn_general bat_btn_options"

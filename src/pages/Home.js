@@ -17,7 +17,7 @@ class Home extends Component {
             <div className="homebtn-getstarted-container">
               <Button
                 variant="outline-light"
-                className="homebtn-getstarted bat_btn_general"
+                className="bat_btn_large bat_btn_general"
                 href={"/CreateAccount"}
                 >
                 Get Started
