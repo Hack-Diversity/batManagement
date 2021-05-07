@@ -111,6 +111,7 @@ const INPUT_OPTIONS = [ "Company Name", "Company Address", "E-mail Address"];
             <div className="btn_next rightSection">
               <NextBtn
                 type="submit"
+                name="Next"
                 onClick={handleNextClick}
               />
             </div>

@@ -13,7 +13,7 @@ function NextBtn(props){
       onClick = {props.onClick}
       >
         <span className="bold">
-          Next
+          {props.name}
         </span>
       </Button>
     </div>

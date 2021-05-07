@@ -44,6 +44,7 @@ function SocialMedia() {
           </div>
           <div className="flex-end">
             <NextBtn
+            name="Next"
             onClick={handleNextClick}/>
           </div>
       </section>
