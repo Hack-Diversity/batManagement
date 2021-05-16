@@ -7,12 +7,6 @@ import {Sidebar_Personalize} from '../sidebars';
 import {Navigation, NavbarDark} from '../navbar';
 import API from '../../api';
 
-const getIt= (item)=>{
-  return  API.getPost(item).then(resp=>{
-    console.log(resp);
-  });
-}
-
 function Sidebar_Personal(props){
   const PERSONAL_OPTIONS = [ "DESIGN", "Logo & Title", "Template", "Background Colors"];
     return(
@@ -26,7 +20,6 @@ function Sidebar_Personal(props){
               <span className="listGroupItem_span">
                 {personalItems}
               </span>
-              {getIt.getPost}
             </ListGroup.Item>
             </a>
           )}

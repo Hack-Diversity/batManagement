@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
 const companyRouter = require('./routes/companyRouter');
-const connectionString = "https://localhost:5000";//placeholder connectionstring
+const connectionString = "https://localhost:5000"; //placeholder connection string
 
 app.use(cors());
 app.use(express.json());
