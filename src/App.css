@@ -296,6 +296,15 @@
   height:50px;
   color:white!important;
 }
+
+.btn-google{
+  border:1px solid #888!important;
+  width:90%;
+  height:50px;
+  color:black!important;
+  font-size:1rem!important;
+  align-self: center;
+}
 /* ************************ */
 
 .listGroupItem_span{
@@ -429,7 +438,7 @@
 
 .loginInput{
   display:grid;
-  grid-template-columns: 35% 20% 35%;
+  grid-template-columns:40% 20% 40%;
 }
 
 .radio{
@@ -437,18 +446,21 @@
   margin:20px 0px;
   position: relative;
   align-items:center;
-  justify-content: space-between;
+  justify-content: space-between!important;
 }
 
-.remember_me{
-  display:contents;
+.radio_text{
+  display:flex;
   position:relative;
+  width:100%; margin:0px 8px;
+  justify-content: space-between!important;
+
 }
 
 .forgot{
   display:flex;
   justify-content: space-between;
-  margin:0px 10px 0px 25px;
+  margin:0px 0px 0px 20px;
 }
 
 .forgot:hover{

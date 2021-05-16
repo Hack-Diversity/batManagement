@@ -5,14 +5,16 @@ import Button from 'react-bootstrap/Button';
 import {useHistory} from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import {NextBtn, ReturnBtn} from '../../components/buttons';
+import axios from 'axios';
+import API from '../../api';
 
 function CreateAccount(props){
   let initialValues = {
-    companyName: "",
-    companyEmail: "",
-    companyAddress: "",
-    companyType:"",
-    companyAbout: "",
+    CompanyName: "",
+    CompanyEmail: "",
+    CompanyAddress: "",
+    CompanyType:"",
+    CompanyAbout: "",
   };
 
   const history = useHistory();
@@ -23,26 +25,56 @@ function CreateAccount(props){
       ...values,
       [data.target.name]: data.target.value
     });
-    return values.data;
+    return values.data
+    axios
+     .post('/', values)
+     .then(res => { return res.values })
+     .catch(err => { return err.message })
   };
 
   const handleBackClick = () => {
     history.push('/');
   };
 
-  const handleNextClick = () =>{
-  history.push('/welcome');
-  console.log(`
-    ${values.CompanyName}
-    ${values.CompanyAddress}
-    ${values.CompanyEmail}
-    ${values.CompanyType}
-    ${values.CompanyAbout}
-  `);
+  function handleNextClick(){
+    history.push('/welcome');
+  };
+
+  function logDataToConsole(){
+    const companyData = (`
+      ${values.CompanyName}
+      ${values.CompanyAddress}
+      ${values.EmailAddress}
+      ${values.CompanyType}
+      ${values.CompanyAbout}
+    `);
+    console.log(companyData);
+  }
+
+function sendDataToMongo(){
+  const data = {
+    CompanyName: `${values.CompanyName}`,
+    CompanyAddress: `${values.CompanyAddress}`,
+    CompanyEmail: `${values.CompanyEmail}`,
+    CompanyType: `${values.CompanyType}`,
+    CompanyAbout: `${values.CompanyAbout}`
+  }
+
+   axios
+    .post('/', data)
+    .then(res => { return res.data })
+    .catch(err => { return err.message })
 };
 
+  const completedForm = () =>{
+    handleNextClick();
+    logDataToConsole();
+    sendDataToMongo();
+  }
+
+
 const SELECT_OPTIONS = [ "Store Owner", "Site Administrator", "Manager", "Employee", "Temp", "Other"];
-const INPUT_OPTIONS = [ "Company Name", "Company Address", "E-mail Address"];
+const INPUT_OPTIONS = [ "Company Name", "Company Address", "Email Address"];
 
   return(
     <Layout>
@@ -51,7 +83,7 @@ const INPUT_OPTIONS = [ "Company Name", "Company Address", "E-mail Address"];
         <h3 className="title">Let's start by creating your account</h3>
       </section>
       <section id="create-form">
-        <Form className="createAccount centered">
+        <Form className="createAccount centered" onSubmit={completedForm}>
           <Form.Group className="leftSection">
             {INPUT_OPTIONS.map((inputs, m) =>
               <>
@@ -112,7 +144,7 @@ const INPUT_OPTIONS = [ "Company Name", "Company Address", "E-mail Address"];
               <NextBtn
                 type="submit"
                 name="Next"
-                onClick={handleNextClick}
+                onClick={completedForm}
               />
             </div>
           </Form.Group>

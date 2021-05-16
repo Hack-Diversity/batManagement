@@ -1,14 +1,13 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import {NavbarDark, Sidebar} from '../../components/navbar';
+import {NavbarDark} from '../../components/navbar';
+import {Sidebar} from '../../components/sidebars';
 
 const DASHBOARD_OPTIONS = [
   "Overview", "Templates", "Manage Social Media",
   "Translation Settings", "Manage Subscription", "Settings"
 ];
-
-
 
 function WelcomeCompany(props){
   return (

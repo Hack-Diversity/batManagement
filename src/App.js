@@ -20,11 +20,10 @@ import {
   SocialMedia,
   SocialMediaLogin,
   Welcome,
-  Language
+  Language,
+  PersonalizeSite
 } from './components/create_account';
 import Layout from './components/layouts/Layout';
-
-import Settings from './pages/Mission';
 
 class App extends Component{
   render(){
@@ -39,11 +38,12 @@ class App extends Component{
           <Route path="/login" component={Login} />
           <Route path="/createAccount" component={CreateAccount} />
           <Route path="/welcome" component={Welcome} />
-          <Route path="/Settings" component={Settings} />
           <Route path="/mission" component={Mission} />
           <Route path="/SocialMedia" component={SocialMedia} />
           <Route path="/Manage Social Media" component={SocialMediaLogin} />
           <Route path="/Translation Settings" component={Language} />
+          <Redirect from="/Translation" to="/Translation Settings" />
+          <Route path="/Personalize" component={PersonalizeSite} />
 
         </Switch>
       </Router>

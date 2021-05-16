@@ -2,6 +2,23 @@ import React from 'react';
 import Layout from '../layouts/Layout';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import GoogleLogin from 'react-google-login';
+
+const handleLogin = async googleData =>{
+  const res = await fetch('/api/v1/auth/google', {
+    method:"POST",
+    body: JSON.stringify({
+      token:googleData.tokenId
+    }),
+    headers:{
+      "Content-Type": "application/json"
+    }
+  })
+
+  const data = await res.json()
+  //
+}
+
 
 function SocialMediaLogin(){
   return(
@@ -42,7 +59,7 @@ function SocialMediaLogin(){
             name="choice"
             value="Remeber Me"
             />
-            <div className="remember_me">
+            <div className="radio_text">
                 Remember Me
                   <span className="forgot">
                     Forgot Password?
@@ -63,11 +80,14 @@ function SocialMediaLogin(){
           </div>
           <div style={{ display:"flex", position:"relative", alignItems:"center" }}>
           <div  style={{width:"100%!important", position:"relative", display:"", color:"green!important"}}>
-            <Button
-              variant=""
-              className="bat_btn_large btn_login_large gray">
-                <small className="bold">Or Sign in with Google</small>
-              </Button>
+            <GoogleLogin
+              className="bat_btn_large btn-google"
+              clientId= {process.env.REACT_APP_GOOGLE_CLIENT_ID}
+              buttonText="Log in with Google"
+              onSuccess={handleLogin}
+              onFailure={handleLogin}
+              cookiePolicy={'single_host_origin'}
+            />
               <small>Don't have an account?
                 <span> Join for free</span>
               </small>
