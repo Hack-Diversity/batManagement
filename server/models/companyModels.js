@@ -9,8 +9,4 @@ const CompanyDatas = new Schema(
   {CompanyAbout: String},
 );
 
-// CompanySchema.virtual("url").get(function(){
-//   return '/company' + this._id
-// });
-
 module.exports = mongoose.model('companydatas', CompanyDatas);

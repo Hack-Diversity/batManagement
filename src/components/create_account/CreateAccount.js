@@ -60,9 +60,11 @@ function sendDataToMongo(){
     CompanyAbout: `${values.CompanyAbout}`
   }
 
+   console.log(data);
+
    axios
     .post('/', data)
-    .then(res => { return res.data })
+    .then(res => { return JSON.stringify(res.data) })
     .catch(err => { return err.message })
 };
 

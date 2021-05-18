@@ -2,22 +2,21 @@ import React from 'react';
 import Layout from '../layouts/Layout';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import GoogleLogin from 'react-google-login';
+import {GoogleLogin, GoogleLogout} from 'react-google-login';
+import { refreshTokenSetup } from '../../api/utils/refreshTokenSetup';
 
-const handleLogin = async googleData =>{
-  const res = await fetch('/api/v1/auth/google', {
-    method:"POST",
-    body: JSON.stringify({
-      token:googleData.tokenId
-    }),
-    headers:{
-      "Content-Type": "application/json"
-    }
-  })
+const tokenId = 'xxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com';
 
-  const data = await res.json()
+  const onSuccess = (response) =>{
+    console.log("Login Success: Current User: ", response.profileObj);
+    refreshTokenSetup(response);
+  };
+
+  const onFailure = (response) =>{
+    console.log("Login failed: Response", response);
+  };
   //
-}
+
 
 
 function SocialMediaLogin(){
@@ -82,12 +81,14 @@ function SocialMediaLogin(){
           <div  style={{width:"100%!important", position:"relative", display:"", color:"green!important"}}>
             <GoogleLogin
               className="bat_btn_large btn-google"
-              clientId= {process.env.REACT_APP_GOOGLE_CLIENT_ID}
+              clientId={tokenId}
               buttonText="Log in with Google"
-              onSuccess={handleLogin}
-              onFailure={handleLogin}
+              onSuccess={onSuccess}
+              onFailure={onFailure}
+              isSignedIn={true}
               cookiePolicy={'single_host_origin'}
             />
+
               <small>Don't have an account?
                 <span> Join for free</span>
               </small>
