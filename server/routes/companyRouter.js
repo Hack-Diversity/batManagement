@@ -7,29 +7,20 @@ router.route('/').get(async (req, res) =>{
    await CompanyDatas
     .find({}, (error, data)=> {
       console.log(data);
-      res.send(data).json();
+      return res.send(data).json();
     })
   });
 
-router.route('/').post((req, res) =>{
-  const CompanyName = req.body.CompanyName;
-  const CompanyAddress = req.body.CompanyAddress;
-  const CompanyEmail = req.body.CompanyEmail;
-  const CompanyType = req.body.CompanyType;
-  const CompanyAbout = req.body.CompanyAbout;
-
-  const newCompany = new CompanyDatas({
-    CompanyName,
-    CompanyAddress,
-    CompanyEmail,
-    CompanyType,
-    CompanyAbout
-  });
-
-  newCompany
-    .save()
-    .then( data => res.status(200).json(data))
-    .catch(error => res.status(400).json("Error: " + error));
-});
+router.route('/add').post((req, res, next) =>{
+  CompanyDatas.create({
+    CompanyName: req.body.CompanyName,
+    CompanyAddress: req.body.CompanyAddress,
+    EmailAddress: req.body.EmailAddress,
+    CompanyType: req.body.CompanyType,
+    CompanyAbout: req.body.CompanyAbout
+  })
+  .then(response => json(response))
+  })
+;
 
 module.exports = router;

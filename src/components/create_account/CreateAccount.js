@@ -6,7 +6,6 @@ import {useHistory} from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import {NextBtn, ReturnBtn} from '../../components/buttons';
 import axios from 'axios';
-import API from '../../api';
 
 function CreateAccount(props){
   let initialValues = {
@@ -26,10 +25,6 @@ function CreateAccount(props){
       [data.target.name]: data.target.value
     });
     return values.data
-    axios
-     .post('/', values)
-     .then(res => { return res.values })
-     .catch(err => { return err.message })
   };
 
   const handleBackClick = () => {
@@ -55,17 +50,15 @@ function sendDataToMongo(){
   const data = {
     CompanyName: `${values.CompanyName}`,
     CompanyAddress: `${values.CompanyAddress}`,
-    CompanyEmail: `${values.CompanyEmail}`,
+    EmailAddress: `${values.EmailAddress}`,
     CompanyType: `${values.CompanyType}`,
     CompanyAbout: `${values.CompanyAbout}`
   }
 
    console.log(data);
 
-   axios
-    .post('/', data)
-    .then(res => { return JSON.stringify(res.data) })
-    .catch(err => { return err.message })
+   axios.post("http://localhost:5000/add", data)
+    .then(res => console.log("Response" + res.data))
 };
 
   const completedForm = () =>{

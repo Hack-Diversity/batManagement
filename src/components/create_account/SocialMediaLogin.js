@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import {GoogleLogin, GoogleLogout} from 'react-google-login';
 import { refreshTokenSetup } from '../../api/utils/refreshTokenSetup';
 
-const tokenId = 'xxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com';
+const tokenId = '1013844202712-kbs44e7uh1h7dch1lsj7jt6i3msntetj.apps.googleusercontent.com';
 
   const onSuccess = (response) =>{
     console.log("Login Success: Current User: ", response.profileObj);
@@ -88,7 +88,11 @@ function SocialMediaLogin(){
               isSignedIn={true}
               cookiePolicy={'single_host_origin'}
             />
-
+            <GoogleLogout
+              clientId={tokenId}
+              buttonText="Logout"
+            >
+            </GoogleLogout>
               <small>Don't have an account?
                 <span> Join for free</span>
               </small>

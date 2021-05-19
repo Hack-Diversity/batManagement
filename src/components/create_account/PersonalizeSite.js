@@ -5,7 +5,6 @@ import '../../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Sidebar_Personalize} from '../sidebars';
 import {Navigation, NavbarDark} from '../navbar';
-import API from '../../api';
 
 function Sidebar_Personal(props){
   const PERSONAL_OPTIONS = [ "DESIGN", "Logo & Title", "Template", "Background Colors"];
@@ -26,9 +25,7 @@ function Sidebar_Personal(props){
         </ListGroup>
 
       </aside>
-    )
-}
-
+    )};
 
 function PersonalizeSite(props){
     return(
