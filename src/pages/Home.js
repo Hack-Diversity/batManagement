@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Button from 'react-bootstrap/Button';
 import Layout from '../components/layouts/Layout'
-import runner from "../assets/runner.jpg";
+import home from '../assets/home2.png';
+import smoke from '../assets/smoke2.png';
 
 class Home extends Component {
   render(){
@@ -11,6 +12,9 @@ class Home extends Component {
       <div className="home-container-top">
         <div className="home-container">
           <div className="home-text-container">
+          <img
+            src={smoke}
+            className="smoky-background-home" />
             <p className="home-text">
               Make a website to improve your business
             </p>
@@ -26,10 +30,10 @@ class Home extends Component {
           </div>
           <div className="w-100">
             <img
-              src={runner}
+              src={home}
               height="100%"
               width="100%"
-              alt="female runner"
+              alt="Laptop displaying restaurant site"
             />
           </div>
         </div>

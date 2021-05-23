@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import {Navigation, Sidebar} from '../../components/navbar';
 import {NextBtn, ReturnBtn} from '../../components/buttons';
 import {useHistory} from 'react-router-dom';
+import smoke from '../../assets/smoke1.png';
+
 
 const SOCIAL_OPTIONS = [ "Facebook", "Twitter", "Yelp", "Other" ];
 

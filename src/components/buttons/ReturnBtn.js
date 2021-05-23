@@ -14,7 +14,7 @@ function ReturnBtn(props){
       type={props.type}
       >
         <span className="bold">
-          Back
+        {props.name}
         </span>
       </Button>
     </div>

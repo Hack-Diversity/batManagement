@@ -1,4 +1,4 @@
-export const refreshTokenSetup = (response) =>{
+ const RefreshTokenSetup = (response) =>{
   let refreshTiming = (response.tokenObj.expires_in
   || 3600-5+60)*1000;
 
@@ -13,3 +13,5 @@ export const refreshTokenSetup = (response) =>{
 
   setTimeout(refreshToken, refreshTiming);
 }
+
+export default RefreshTokenSetup;

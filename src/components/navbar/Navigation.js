@@ -37,8 +37,6 @@ export default class Navigation extends Component {
                 Log In
               </span>
             </Nav.Link>
-            <Nav.Link className="navLinks bold" href="/Personalize">Testing </Nav.Link>
-
           </span>
          </Nav>
        </Navbar>

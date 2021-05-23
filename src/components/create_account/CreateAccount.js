@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import {useHistory} from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import {NextBtn, ReturnBtn} from '../../components/buttons';
+import smoke from '../../assets/smoke1.png';
 import axios from 'axios';
 
 function CreateAccount(props){
@@ -24,7 +25,7 @@ function CreateAccount(props){
       ...values,
       [data.target.name]: data.target.value
     });
-    return values.data
+    return values.value;
   };
 
   const handleBackClick = () => {
@@ -32,7 +33,7 @@ function CreateAccount(props){
   };
 
   function handleNextClick(){
-    history.push('/welcome');
+    history.push('/personal');
   };
 
   function logDataToConsole(){
@@ -46,27 +47,31 @@ function CreateAccount(props){
     console.log(companyData);
   }
 
-function sendDataToMongo(){
-  const data = {
-    CompanyName: `${values.CompanyName}`,
-    CompanyAddress: `${values.CompanyAddress}`,
-    EmailAddress: `${values.EmailAddress}`,
-    CompanyType: `${values.CompanyType}`,
-    CompanyAbout: `${values.CompanyAbout}`
-  }
-
-   console.log(data);
-
-   axios.post("http://localhost:5000/add", data)
-    .then(res => console.log("Response" + res.data))
-};
+  function sendDataToMongo(){
+    const data = {
+      CompanyName: `${values.CompanyName}`,
+      CompanyAddress: `${values.CompanyAddress}`,
+      EmailAddress: `${values.EmailAddress}`,
+      CompanyType: `${values.CompanyType}`,
+      CompanyAbout: `${values.CompanyAbout}`
+    }
+     axios.post("http://localhost:5000/add", data)
+      .then(res => console.log("Response" + res.data))
+  };
 
   const completedForm = () =>{
+    if(
+    `${values.CompanyName}`.length>0 &&
+    `${values.CompanyAddress}`.length>0 &&
+    `${values.EmailAddress}`.length>0 &&
+    `${values.CompanyType}`.length>0 &&
+    `${values.CompanyAbout}`.length>0
+    ){
     handleNextClick();
     logDataToConsole();
     sendDataToMongo();
+  }else alert("Cannot leave field empty");
   }
-
 
 const SELECT_OPTIONS = [ "Store Owner", "Site Administrator", "Manager", "Employee", "Temp", "Other"];
 const INPUT_OPTIONS = [ "Company Name", "Company Address", "Email Address"];
@@ -95,6 +100,9 @@ const INPUT_OPTIONS = [ "Company Name", "Company Address", "Email Address"];
                   placeholder={inputs}
                   value={values.value}
                   onChange={handleOnChange}
+                  required
+                  size="40"
+                  minLength="4"
                   className={`createAccount_input createAccount_${inputs.replace(" ", "")}`}
                   >
                 </input>
@@ -103,6 +111,7 @@ const INPUT_OPTIONS = [ "Company Name", "Company Address", "Email Address"];
             <div>
               <ReturnBtn
                 type="submit"
+                name="Back"
                 onClick={handleBackClick}
               />
             </div>
@@ -111,7 +120,7 @@ const INPUT_OPTIONS = [ "Company Name", "Company Address", "Email Address"];
             <Form.Label
             size="lg"
             className="form-label"
-            for="CompanyType">Company Type
+            for="CompanyType">Account Creator
             </Form.Label>
             <select
               name="CompanyType"
@@ -125,7 +134,7 @@ const INPUT_OPTIONS = [ "Company Name", "Company Address", "Email Address"];
               size="lg"
               className="form-label"
               for="CompanyAbout">
-                About the company
+                About the Company
             </Form.Label>
             <textarea
               type="comment"
