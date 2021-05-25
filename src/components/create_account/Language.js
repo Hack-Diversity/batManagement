@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import {Navigation, Sidebar} from '../../components/navbar';
 import {NextBtn, ReturnBtn} from '../../components/buttons';
 import {useHistory} from 'react-router-dom';
+import Footer from "../../components/layouts/Footer";
 
 const LANGUAGE_OPTIONS = [
   "Arabic", "Bengali", "Burmese", "Creole", "English", "German", "Hindi", "Igbo", "Fulani",
@@ -32,14 +33,14 @@ function Language() {
 
   return(
     <>
-    <div className="w-100" fluid expand="lg">
+    <div className="w-100" fluid >
       <Navigation />
-      <div>
-        <section style={{marginTop:"50px"}}>
-          <h2 className="title mg"> Language Settings </h2>
+      <div className="row" style={{display:"grid", position:"relative"}}>
+        <section className="col flex-center mtop_50">
+          <h2 className="title"> Language Settings </h2>
         </section>
-        <section className="dashboard w-100" style={{backgroundColor:"transparent", display:"flex"}}>
-          <div className={{display:"block", alignItems:"center"}}>
+        <section className="dashboard col-10 lang">
+          <div className="flex-center">
             <select
               name="CompanyType"
               value={values.value}
@@ -49,13 +50,14 @@ function Language() {
                   {LANGUAGE_OPTIONS.map((option, i) => <option key ={i} value={option}>{option}</option>)}
             </select>
             <div className="flex-between">
-              <ReturnBtn onClick={handleBackClick} />
+              <ReturnBtn onClick={handleBackClick} name="Back" />
               <NextBtn onClick={handleNextClick} name="Save"/>
             </div>
           </div>
         </section>
       </div>
-    </div>
+
+      </div>
     </>
    )
 }

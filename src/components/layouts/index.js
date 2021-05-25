@@ -1,9 +1,9 @@
 import Footer from './Footer';
 import Layout from './Layout';
-import TriangleYellow from './TriangleYellow';
+import LayoutDark from './LayoutDark';
 
 export {
   Footer,
   Layout,
-  TriangleYellow
+  LayoutDark
 };

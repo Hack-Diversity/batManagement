@@ -39,6 +39,16 @@
   padding:0px;
 }
 
+.mtop_50{
+  margin-top:50px;
+}
+
+.lang{
+  background:transparent!important;
+  display:flex!important;
+  margin-top:-40px!important;
+}
+
 .bold{
   font-weight:bold!important;
 }
@@ -206,6 +216,10 @@
   margin:3rem 2rem 2rem 3rem;
 }
 
+.black_text{
+  color:black;
+}
+
 .homebtn-getstarted-container{
   display:flex; position: relative;
   margin:0px 0px 0px 40px;
@@ -369,6 +383,14 @@
 
 .mg{
   margin:30px 0px;
+}
+
+.welcome_opt{
+  margin:0px 0px 0px 0px;
+}
+
+.wecome_opt2{
+  margin:0px 0px 10px 0px;
 }
 
 .sidebar{

@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import {NavbarDark} from '../../components/navbar';
 import {Sidebar} from '../../components/sidebars';
+import Footer from "../../components/layouts/Footer";
 
 const DASHBOARD_OPTIONS = [
   "Overview", "Templates", "Manage Social Media",
@@ -23,18 +24,18 @@ function Welcome() {
 
   return(
     <>
-    <div className="w-100" fluid expand>
+    <div className="w-100" fluid expand="lg">
     <NavbarDark />
     <div className="welcome-side-nav">
     <Sidebar />
     <div className="welcome">
       <section className="welcome-container">
         <WelcomeCompany name="[Compant Name]" />
-        <p className="mg">
+        <p className=" welcome_opt black_text">
           This is your administrator page,
           where you can manage your business' website
         </p>
-        <p className="small">(Select from the options below or on the left)</p>
+        <p className="welcome_opt2 black_text">(Select from the options below or on the left)</p>
       </section>
       <section className="dashboard">
         {DASHBOARD_OPTIONS.map((dashOptions, i) => <Button
@@ -44,6 +45,7 @@ function Welcome() {
           href={`/${dashOptions}`}
           key={i}>{dashOptions}</Button>)}
       </section>
+      <Footer />
       </div>
     </div>
     </div>
