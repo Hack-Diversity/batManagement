@@ -38,6 +38,7 @@ function SocialMedia() {
           type="button"
           className="bat_btn_general bat_btn_options"
           variant=""
+          href={`/${social}`}
           key={i}>{social}</Button>)}
           <div className="flex-start">
             <ReturnBtn

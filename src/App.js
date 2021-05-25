@@ -15,6 +15,8 @@ import {
   Home,
   Login,
   Mission,
+  Facebook,
+  Tweets,
   Price,
   Templates
 } from './pages';
@@ -47,6 +49,8 @@ class App extends Component{
           <Route path="/welcome" exact component={() => <Welcome />} />
           <Route path="/SocialMedia" exact component={() => <SocialMedia />} />
           <Route path="/Manage Social Media" exact component={() => <Login />} />
+          <Route path="/Facebook" exact component={() => <Facebook />} />
+          <Route path="/Twitter" exact component={() => <Tweets />} />
           <Route path="/Translation Settings" exact component={() => <Language/>} />
           <Redirect from="/Translation" to="/Translation Settings" />
           <Route path="/Personalize" exact component={() => <PersonalizeSite />} />

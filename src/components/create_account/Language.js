@@ -1,26 +1,29 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import {Navigation, Sidebar} from '../../components/navbar';
 import {NextBtn, ReturnBtn} from '../../components/buttons';
 import {useHistory} from 'react-router-dom';
 import Footer from "../../components/layouts/Footer";
+import axios from 'axios';
 
 const LANGUAGE_OPTIONS = [
   "Arabic", "Bengali", "Burmese", "Creole", "English", "German", "Hindi", "Igbo", "Fulani",
   "French", "Italian", "Japanese", "Mandarine", "Spanish", "Russian", "Yoruba" ];
 
-function Language() {
-  const [values, setValues] = useState("");
+function Language({text, language}) {
+  const [convertedText, setConvertedText] = useState("");
   const history = useHistory();
 
-  const handleOnChange = (data) =>{
-    setValues({
-      ...values,
-      [data.target.name]: data.target.value
+  const handleOnChange = (lang) =>{
+    setConvertedText({
+      ...convertedText,
+      [lang.target.name]: lang.target.value
     });
-    return values.data;
+    return convertedText.lang;
+
   };
+
 
   const handleBackClick = () => {
       history.push('/welcome');
@@ -30,7 +33,6 @@ function Language() {
     alert("Saved");
     history.push('/welcome');
   }
-
   return(
     <>
     <div className="w-100" fluid >
@@ -43,7 +45,7 @@ function Language() {
           <div className="flex-center">
             <select
               name="CompanyType"
-              value={values.value}
+              value={convertedText.value}
               onChange={handleOnChange}
               className="createAccount_input createAccount_accountType" style={{width:"350px"}}>
                 <option value=" ">Select Language... </option>
