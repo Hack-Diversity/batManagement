@@ -1,0 +1,30 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "engines": {
+        "node": ">=12.20.1",
+        "npm": ">=6.4.1",
+        "yarn": ">=1.22.10"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "debugServer": "npx nodemon inspect index.js",
+        "server": "npx nodemon index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "google-auth-library": "^7.1.0",
+        "mongodb": "^3.6.4",
+        "mongoose": "^5.12.11",
+        "nodemon": "^2.0.2",
+        "sift": "^13.5.4"
+    }
+}
